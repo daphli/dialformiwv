@@ -1,0 +1,243 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(90, 90, 90);
+}
+
+fieldset {
+    width: 100%;
+    background-color: rgb(90, 90, 90);
+    color: whitesmoke;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -ms-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+    padding-right: 4%;
+    padding-left: 4%;
+}
+
+fieldset:hover {
+    background-color: rgb(212, 212, 212);
+    color: black;
+}
+
+input {
+    background-color: rgb(105, 105, 105);
+    color: white;
+    border: none;
+}
+
+input:focus {
+    background-color: rgb(55, 55, 55);
+    border: none;
+    outline: none;
+}
+
+select {
+    background-color: rgb(105, 105, 105);
+    color: white;
+    border: none;
+}
+
+select:focus {
+    background-color: rgb(55, 55, 55);
+    border: none;
+    outline: none;
+}
+
+textarea:focus {
+    background-color: rgb(55, 55, 55);
+}
+
+.tab button:focus {
+    background-color: whitesmoke !important;
+    color: black;
+}
+
+legend {
+    color: white;
+}
+
+form {
+    margin-right: 0.5%;
+    display: flex;
+    flex-direction: row;
+}
+
+textarea {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(105, 105, 105);
+    color: white;
+    border: none;
+}
+
+textarea:focus {
+    border: none;
+    outline: none;
+}
+
+.data-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.fieldsets {
+    border: 2px solid rgb(252, 147, 147);
+    background-color: rgb(80, 80, 80);
+}
+
+.fieldsets_validated {
+    border: 1px solid;
+    border-color: rgb(90, 90, 90);
+}
+
+.form_labels {
+    background-color: rgb(252, 147, 147);
+}
+
+.form_labels_validated {
+    background-color: rgb(121, 238, 193);
+}
+
+.help_text {
+    font-size: 12px;
+}
+
+.formfield {
+    width: 100%;
+}
+
+.extraInfo {
+    text-align: right;
+    color: rgb(125, 125, 125);
+    font-weight: bolder;
+}
+
+.more_form {
+    width: 99%;
+}
+
+.tab {
+    overflow: hidden;
+    border: 0px;
+    background-color: rgb(105, 105, 105);
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 4px 16px;
+    font-size: 14px;
+    width: 33.33%;
+}
+
+.tab button:hover {
+    background-color: whitesmoke;
+    color: black;
+    transition: 0.5s;
+  }
+
+.tab button.active {
+    background-color: rgb(170, 170, 170);
+    color: black;
+}
+
+.tabcontent_split_2 {
+    width: 50%;
+    float: left;
+    display: inherit;
+    margin-bottom: 15px;
+}
+
+.tabcontent_split_3 {
+    width: 33.33%;
+    float: left;
+    display: inherit;
+    margin-bottom: 15px;
+}
+
+.notes {
+    width: 100%;
+    border: none;
+}
+
+.tabcontent {
+    display: none;
+}
+
+.tablinks {
+    color: whitesmoke;
+}
+
+#stammdaten_form {
+    width: 25%;
+}
+
+#erreichbarkeit_form {
+    width: 30%;
+}
+
+#versicherung_form {
+    width: 45%;
+}
+
+#legend_personendaten {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 18px;
+}
+
+#legend_erreichbarkeit {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 18px;
+}
+
+#legend_versicherung {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 18px;
+}
+
+#stammdaten_birthday {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#stammdaten_anrede, #stammdaten_birthday, #stammdaten_hausnummer {
+    min-width: 90px;
+    max-width: 120px;
+}
+
+#stammdaten_vorname, #stammdaten_nachname, #stammdaten_plz, #stammdaten_strasse, #erreichbarkeit_email, #erreichbarkeit_phone {
+    min-width: 200px;
+    max-width: 60%;
+}
+
+span {
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+label {
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+input {
+    margin-top: 8px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+select {
+    margin-top: 8px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    height: 18px;
+}

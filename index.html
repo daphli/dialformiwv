@@ -1,0 +1,221 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            iwv - Zusatz (Stammdaten)
+        </title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section class="data-section">
+        <form class="iwv-form" id="stammdaten_form">
+            <fieldset class="fieldsets" id="fieldset_personendaten">
+                <legend id="legend_personendaten">
+                    P E R S O N E N D A T E N
+                </legend>
+                <div>
+                    <label class="form_labels" id="stammdaten_label_anrede" onmouseup="return toggleAnredeHilfe()">˅</label>
+                    <span id="stammdaten_span_anrede">Anrede</span>
+                    <div class="help_text" hidden="false" id="stammdaten_anrede_help">
+                        Es muss eine Anrede ausgewählt werden.
+                    </div>
+                </div>
+                <select class="formfield" id="stammdaten_anrede" onchange="return validateAnrede()">
+                    <option id="stammdaten_anrede_empty"></option>
+                    <option id="stammdaten_anrede_herr">Herr</option>
+                    <option id="stammdaten_anrede_frau">Frau</option>
+                </select>
+                <div>
+                    <label class="form_labels" id="stammdaten_label_vorname" onmouseup="return toggleVornameHilfe()">˅</label>
+                    <span>Vorname</span>
+                    <div class="help_text" hidden="false" id="stammdaten_vorname_help">
+                        Der Vorname muss aus mindestens 2 Buchstaben bestehen.
+                    </div>
+                </div>
+                <input class="formfield" type="text" id="stammdaten_vorname" onkeyup="return validateVorname()">
+                <div>
+                    <label class="form_labels" id="stammdaten_label_nachname" onmouseup="return toggleNachnameHilfe()">˅</label>
+                    <span>Nachname</span>
+                    <div class="help_text" hidden="false" id="stammdaten_nachname_help">
+                        Der Nachname muss aus mindestens 2 Buchstaben bestehen.
+                    </div>
+                </div>
+                <input class="formfield" type="text" id="stammdaten_nachname" onkeyup="return validateNachname()">
+                <br/>
+                <br/>
+                <hr>
+                <br/>
+                <div>
+                    <label class="form_labels" id="stammdaten_label_plz" onmouseup="return togglePLZHilfe()">˅</label>
+                    <span>PLZ - Ort</span>
+                    <div class="help_text" hidden="false" id="stammdaten_plz_help">
+                        Die PLZ muss eine 5-stellige Zahl sein (und vor dem Ort angegeben werden).
+                    </div>
+                </div>
+                <input class="formfield" type="text" id="stammdaten_plz" onkeyup="return validatePLZ()">
+                <div>
+                    <label class="form_labels" id="stammdaten_label_strasse" onmouseup="return toggleStrasseHilfe()">˅</label>
+                    <span>Straße</span>
+                    <div class="help_text" hidden="false" id="stammdaten_strasse_help">
+                        Bitte die Straße des Kunden eintragen.
+                    </div>
+                </div>
+                <input class="formfield" type="text" id="stammdaten_strasse" onkeyup="return validateStrasse()">
+                <div>
+                    <label class="form_labels" id="stammdaten_label_hausnummer" onmouseup="return toggleHausnummerHilfe()">˅</label>
+                    <span>Hausnummer</span>
+                    <div class="help_text" hidden="false" id="stammdaten_hausnummer_help">
+                        Bitte die Hausnummer (eventuell inklusive Hausnummer-Zusatz) des Kunden eintragen.
+                    </div>
+                </div>
+                <input class="formfield" type="text" id="stammdaten_hausnummer" onkeyup="return validateHausnummer()">
+                <br/>
+                <br/>
+                <hr>
+                <br/>
+                <div>
+                    <label class="form_labels_validated" id="stammdaten_label_blz" onmouseup="return toggleBLZHilfe()">˅</label>
+                    <span>Bankleitzahl (BLZ)</span>
+                    <div class="help_text" hidden="false" id="stammdaten_blz_help">
+                        <div class="extraInfo">[Kein Pflichtfeld]</div>
+                        Mit der Bankleitzahl kann die zuständige Bank des Kontos identifiziert werden.
+                    </div>
+                </div>
+                <input class="formfield" type="text" id="stammdaten_blz" onkeyup="return validateBLZ()">
+                <div>
+                    <label class="form_labels_validated" id="stammdaten_label_iban" onmouseup="return toggleIBANHilfe()">˅</label>
+                    <span>IBAN</span>
+                    <div class="help_text" hidden="false" id="stammdaten_iban_help">
+                        <div class="extraInfo">[Kein Pflichtfeld]</div>
+                        Mit der IBAN kann das Konto des Kunden identifiziert werden.
+                    </div>
+                </div>
+                <input class="formfield" type="text" id="stammdaten_iban" onkeyup="return validateIBAN()">
+                <br/>
+                <br/>
+                <hr>
+                <br/>
+                <div>
+                    <label class="form_labels" id="stammdaten_label_birthday" onmouseup="return toggleBirthdayHilfe()">˅</label>
+                    <span>Geburtsdatum</span>
+                    <div class="help_text" hidden="false" id="stammdaten_birthday_help">
+                        Bitte das Geburtsdatum des Kunden auswählen.
+                    </div>
+                </div>
+                <input class="formfield" type="date" id="stammdaten_birthday" onchange="return validateBirthday()">
+            </fieldset>
+        </form>
+        <form class="iwv-form" id="erreichbarkeit_form">
+            <fieldset class="fieldsets" id="fieldset_erreichbarkeit">
+                <legend id="legend_erreichbarkeit">
+                    E R R E I C H B A R K E I T
+                </legend>
+                <div>
+                    <label class="form_labels" id="erreichbarkeit_label_email" onmouseup="return toggleEMailHilfe()">˅</label>
+                    <span>E-Mail</span>
+                    <div class="help_text" hidden="false" id="erreichbarkeit_email_help">
+                        Bitte eine valide E-Mail des Kunden eintragen.
+                    </div>
+                </div>
+                <input class="formfield" type="text" id="erreichbarkeit_email" onkeyup="return validateEMail()">
+                <div>
+                    <label class="form_labels_validated" id="erreichbarkeit_label_phone" onmouseup="return togglePhoneHilfe()">˅</label>
+                    <span>Telefon</span>
+                    <div class="help_text" hidden="false" id="erreichbarkeit_phone_help">
+                        <div class="extraInfo">[Kein Pflichtfeld]</div>
+                        Bitte nur eine zusammenstehende Telefonnummer (Festnetz, Firma oder Mobil) ohne Leertaste oder "/" eintragen.
+                    </div>
+                </div>
+                <input class="formfield" type="text" id="erreichbarkeit_phone" onkeyup="return validatePhone()">
+                <div>
+                    <span>Anmerkungen</span>
+                    <textarea class="notes" id="erreichbarkeit_kontakt_anmerkung" rows="7"></textarea>
+                </div>
+                <br/>
+                <br/>
+                <hr>
+                <br/>
+                <div>
+                    <label class="form_labels_validated" id="erreichbarkeit_label_rueckruf" onmouseup="return toggleRueckrufHilfe()">˅</label>
+                    <span id="erreichbarkeit_span_rueckruf">Rückrufbitte</span>
+                    <div class="help_text" hidden="false" id="erreichbarkeit_rueckruf_help">
+                        Wann ist der Kunde wieder erreichbar?
+                    </div>
+                    <div class="help_text" hidden="false" id="erreichbarkeit_rueckruf_error">
+                        Hi!
+                    </div>
+                </div>
+                <div class="tab">
+                    <button type="button" class="tablinks active" onmouseup="showErreichbarkeitsModus(event, 'erreichbarkeit_regel')">Regel</button>
+                    <button type="button" class="tablinks" onmouseup="showErreichbarkeitsModus(event, 'erreichbarkeit_termin')">Termin</button>
+                    <button type="button" class="tablinks" onmouseup="showErreichbarkeitsModus(event, 'erreichbarkeit_zeitspanne')">Zeitspanne</button>
+                </div>
+                <div class="tabcontent" id="erreichbarkeit_regel" style="display: block;">
+                    <div class="tabcontent_split_2">
+                        <span>Wochentag</span>
+                        <select class="more_form" id="erreichbarkeit_regel_wochentag">
+                            <option id="erreichbarkeit_regel_empty">Keine Präferenz</option>
+                            <option id="erreichbarkeit_regel_montag">montags</option>
+                            <option id="erreichbarkeit_regel_dienstag">dienstags</option>
+                            <option id="erreichbarkeit_regel_mittwoch">mittwochs</option>
+                            <option id="erreichbarkeit_regel_donnerstag">donnerstags</option>
+                            <option id="erreichbarkeit_regel_freitag">freitags</option>
+                            <option id="erreichbarkeit_regel_samstag">samstags</option>
+                        </select>
+                    </div>
+                    <div class="tabcontent_split_2">
+                        <span>Tageszeit</span>
+                        <select class="more_form" id="erreichbarkeit_regel_tageszeit">
+                            <option id="erreichbarkeit_regel_empty">Keine Präferenz</option>
+                            <option id="erreichbarkeit_regel_morgen">morgens</option>
+                            <option id="erreichbarkeit_regel_vormittag">vormittags</option>
+                            <option id="erreichbarkeit_regel_mittag">mittags</option>
+                            <option id="erreichbarkeit_regel_nachmittag">nachmittags</option>
+                            <option id="erreichbarkeit_regel_abend">abends</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tabcontent" id="erreichbarkeit_termin">
+                    <div class="tabcontent_split_2">
+                        <span>Datum</span>
+                        <input class="more_form" type="date" id="erreichbarkeit_termin_datum" onchange="return validateErreichbarkeit()">
+                    </div>
+                    <div class="tabcontent_split_2">
+                        <span>Uhrzeit</span>
+                        <input class="more_form" type="time" id="erreichbarkeit_termin_uhrzeit">
+                    </div>
+                </div>
+                <div class="tabcontent" id="erreichbarkeit_zeitspanne">
+                    <div class="tabcontent_split_3">
+                        <span>Datum</span>
+                        <input class="more_form" type="date" id="erreichbarkeit_zeitspanne_datum" onchange="return validateErreichbarkeit()">
+                    </div>
+                    <div class="tabcontent_split_3">
+                        <span>Von</span>
+                        <input class="more_form" type="time" id="erreichbarkeit_zeitspanne_von" onchange="return validateErreichbarkeit()">
+                    </div>
+                    <div class="tabcontent_split_3">
+                        <span>Bis</span>
+                        <input class="more_form" type="time" id="erreichbarkeit_zeitspanne_bis" onchange="return validateErreichbarkeit()">
+                    </div>
+                </div>
+                <div>
+                    <span>Anmerkungen</span>
+                    <textarea class="notes" id="erreichbarkeit_rueckruf_anmerkung" rows="7"></textarea>
+                </div>
+            </fieldset>
+        </form>
+        <form class="iwv-form" id="versicherung_form">
+            <fieldset class="fieldsets_validated" id="fieldset_versicherung">
+                <legend id="legend_versicherung">
+                    V E R S I C H E R U N G
+                </legend>
+                Klicke auf die Signatur, um das Formular mit Musterdaten zu befüllen:
+                <p onclick="magic()">HIER KLICKEN!</p>
+            </fieldset>
+        </form>
+        </section>
+        
+    </body>
+</html>
